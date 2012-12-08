@@ -145,9 +145,6 @@
     {
         id<GamingEventMenuItemViewController> menuItem = destination.viewControllers[0];
         menuItem.gamingEvent = self.gamingEvent;
-        NSLog(@"Conforms");
-    } else {
-        NSLog(@"Conforms NOTT");
     }
 }
 

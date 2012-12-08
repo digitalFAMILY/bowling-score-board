@@ -44,8 +44,6 @@
     if(self.gamingEvent) {
         self.dateLabel.text = [self.dateFormatter stringFromDate:[self.gamingEvent valueForKey:@"timeStamp"]];
     }
-    
-    NSLog(@"%@", self.gamingEvent);
 }
 
 - (void)didReceiveMemoryWarning
