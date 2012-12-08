@@ -10,14 +10,15 @@
     <entity name="Game" syncable="YES">
         <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="location" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
+        <relationship name="lane" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lane" syncable="YES"/>
     </entity>
     <entity name="GamePrice" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="GamingEvent" syncable="YES">
-        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="gamingevents" inverseEntity="Location" syncable="YES"/>
         <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="gamingevent" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Lane" syncable="YES">
@@ -38,6 +39,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Food" syncable="YES"/>
         <relationship name="gameprices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GamePrice" syncable="YES"/>
+        <relationship name="gamingevents" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GamingEvent" inverseName="location" inverseEntity="GamingEvent" syncable="YES"/>
         <relationship name="lanes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lane" syncable="YES"/>
     </entity>
     <entity name="Person" syncable="YES">
@@ -52,14 +54,14 @@
     </entity>
     <elements>
         <element name="Food" positionX="-63" positionY="443" width="128" height="73"/>
-        <element name="Game" positionX="133" positionY="254" width="128" height="88"/>
-        <element name="GamePrice" positionX="322" positionY="359" width="128" height="73"/>
-        <element name="GamingEvent" positionX="340" positionY="54" width="128" height="73"/>
-        <element name="Lane" positionX="297" positionY="540" width="128" height="88"/>
-        <element name="LaneExtra" positionX="468" positionY="513" width="126" height="73"/>
-        <element name="Location" positionX="124" positionY="380" width="128" height="178"/>
-        <element name="Person" positionX="-63" positionY="54" width="128" height="88"/>
-        <element name="Player" positionX="126" positionY="113" width="128" height="88"/>
         <element name="FoodEaten" positionX="-63" positionY="243" width="128" height="58"/>
+        <element name="Game" positionX="133" positionY="254" width="128" height="88"/>
+        <element name="GamePrice" positionX="387" positionY="368" width="128" height="73"/>
+        <element name="GamingEvent" positionX="439" positionY="164" width="128" height="88"/>
+        <element name="Lane" positionX="315" positionY="569" width="128" height="88"/>
+        <element name="LaneExtra" positionX="468" positionY="522" width="126" height="73"/>
+        <element name="Location" positionX="124" positionY="380" width="128" height="193"/>
+        <element name="Person" positionX="-63" positionY="54" width="128" height="88"/>
+        <element name="Player" positionX="207" positionY="113" width="128" height="88"/>
     </elements>
 </model>
