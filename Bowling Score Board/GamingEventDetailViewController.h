@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GamingEventMenuViewController.h"
 
-@protocol GamingEventMenuItemViewController;
 @protocol GamingEventDetailViewControllerDelegate;
 
 @interface GamingEventDetailViewController : UITableViewController<GamingEventMenuItemViewController>

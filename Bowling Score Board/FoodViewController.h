@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GamingEventMenuViewController.h"
 
 @protocol GamingEventMenuItemViewController;
 @interface FoodViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,GamingEventMenuItemViewController>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "GamingEventDetailViewController.h"
 
 @protocol GamingEventDetailViewControllerDelegate;
 @interface GamingEventViewController : UITableViewController <NSFetchedResultsControllerDelegate, GamingEventDetailViewControllerDelegate>
