@@ -11,6 +11,7 @@
 @interface GamingEventDetailViewController ()
 
 -(void)editButtonClicked:(id)sender;
+-(NSDateFormatter*)dateFormatter;
 
 @end
 
@@ -36,6 +37,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if(self.gamingEvent) {
+        self.dateLabel.text = [self.dateFormatter stringFromDate:[self.gamingEvent valueForKey:@"timeStamp"]];
+    }
+    
+    NSLog(@"%@", self.gamingEvent);
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,6 +113,16 @@
 -(void)editButtonClicked:(id)sender
 {
 
+}
+
+#pragma mark - Helper
+
+-(NSDateFormatter*)dateFormatter
+{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"EEEE, dd.MM.YYYY HH:mm";
+    
+    return dateFormatter;
 }
 
 @end

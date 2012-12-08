@@ -10,6 +10,8 @@
 
 @interface GamingEventMenuViewController ()
 
+-(NSDateFormatter*)dateFormatter;
+
 @end
 
 @implementation GamingEventMenuViewController
@@ -66,6 +68,11 @@
         default:
             indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
             segueIdentifier = @"Scoring";
+    }
+    
+    if(self.gamingEvent)
+    {
+        self.title = [self.dateFormatter stringFromDate:[self.gamingEvent valueForKey:@"timeStamp"]];
     }
     
     [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionTop];
@@ -128,6 +135,30 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UINavigationController* destination = segue.destinationViewController;
+    
+    if([[destination.viewControllers[0] class] conformsToProtocol:@protocol(GamingEventMenuItemViewController)])
+    {
+        id<GamingEventMenuItemViewController> menuItem = destination.viewControllers[0];
+        menuItem.gamingEvent = self.gamingEvent;
+        NSLog(@"Conforms");
+    } else {
+        NSLog(@"Conforms NOTT");
+    }
+}
+
+#pragma mark - Helper
+
+-(NSDateFormatter*)dateFormatter
+{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"EEEE, dd.MM.YYYY HH:mm";
+    
+    return dateFormatter;
 }
 
 @end

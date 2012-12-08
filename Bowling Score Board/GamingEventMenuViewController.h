@@ -18,5 +18,12 @@ typedef NS_ENUM(NSInteger, GamingEventMenuState) {
 @interface GamingEventMenuViewController : UITableViewController
 
 @property (nonatomic) GamingEventMenuState menuState;
+@property (nonatomic,strong) id gamingEvent;
 
 @end
+
+@protocol GamingEventMenuItemViewController
+
+@property (nonatomic, strong) id gamingEvent;
+
+@end;

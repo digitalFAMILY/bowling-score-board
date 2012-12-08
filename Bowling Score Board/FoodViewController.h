@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FoodViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
+@protocol GamingEventMenuItemViewController;
+@interface FoodViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,GamingEventMenuItemViewController>
+
+@property (nonatomic, strong) id gamingEvent;
 
 @end

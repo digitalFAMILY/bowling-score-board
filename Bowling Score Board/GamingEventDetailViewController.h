@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GamingEventDetailViewController : UITableViewController
+@protocol GamingEventMenuItemViewController;
+@interface GamingEventDetailViewController : UITableViewController<GamingEventMenuItemViewController>
+
+@property (nonatomic, strong) IBOutlet UILabel* dateLabel;
+@property (nonatomic, strong) id gamingEvent;
+
 
 @end

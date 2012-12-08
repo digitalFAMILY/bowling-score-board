@@ -11,6 +11,9 @@
 
 @interface GamingEventViewController ()
 
+-(id)recordAtIndexPath:(NSIndexPath*)indexPath;
+-(NSDateFormatter*)dateFormatter;
+
 @end
 
 @implementation GamingEventViewController
@@ -73,7 +76,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+    //NSManagedObject* object = [self recordAtIndexPath:indexPath];
     //TODO: tell next mastercontroller to switch here
 }
 
@@ -189,8 +192,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+    NSManagedObject *object = [self recordAtIndexPath: indexPath];
+    
+    
+    cell.textLabel.text = [self.dateFormatter stringFromDate:[object valueForKey:@"timeStamp"]];
 }
 
 
@@ -198,12 +203,30 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if(segue.identifier == @"selectEvent")
+    if([segue.identifier isEqualToString:@"selectEvent"])
     {
+        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+
         GamingEventMenuViewController* gamingEventMenu = segue.destinationViewController;
         
         gamingEventMenu.menuState = GamingEventMenuStateEventDetails;
+        gamingEventMenu.gamingEvent = [self recordAtIndexPath:selectedRowIndex];
     }
+}
+
+#pragma mark - Helper
+
+-(id)recordAtIndexPath:(NSIndexPath*)indexPath
+{
+    return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
+-(NSDateFormatter*)dateFormatter
+{
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"EEEE, dd.MM.YYYY HH:mm";
+    
+    return dateFormatter;
 }
 
 @end
