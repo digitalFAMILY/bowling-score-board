@@ -22,6 +22,8 @@
 		F2725237167297690020E79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725207167297690020E79C /* Foundation.framework */; };
 		F272523F167297690020E79C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F272523D167297690020E79C /* InfoPlist.strings */; };
 		F2725242167297690020E79C /* Bowling_Score_BoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2725241167297690020E79C /* Bowling_Score_BoardTests.m */; };
+		F2C6AFD3167372CD0056395C /* GamingEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFD2167372CD0056395C /* GamingEventViewController.m */; };
+		F2C6AFD61673792A0056395C /* GamingEventMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		F272523E167297690020E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F2725240167297690020E79C /* Bowling_Score_BoardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bowling_Score_BoardTests.h; sourceTree = "<group>"; };
 		F2725241167297690020E79C /* Bowling_Score_BoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bowling_Score_BoardTests.m; sourceTree = "<group>"; };
+		F2C6AFD1167372CD0056395C /* GamingEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GamingEventViewController.h; path = ../GamingEventViewController.h; sourceTree = "<group>"; };
+		F2C6AFD2167372CD0056395C /* GamingEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GamingEventViewController.m; path = ../GamingEventViewController.m; sourceTree = "<group>"; };
+		F2C6AFD41673792A0056395C /* GamingEventMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventMenuViewController.h; sourceTree = "<group>"; };
+		F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,10 @@
 				F2725214167297690020E79C /* AppDelegate.h */,
 				F2725215167297690020E79C /* AppDelegate.m */,
 				F272521D167297690020E79C /* MainStoryboard.storyboard */,
+				F2C6AFD41673792A0056395C /* GamingEventMenuViewController.h */,
+				F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */,
+				F2C6AFD1167372CD0056395C /* GamingEventViewController.h */,
+				F2C6AFD2167372CD0056395C /* GamingEventViewController.m */,
 				F272520C167297690020E79C /* Supporting Files */,
 			);
 			path = "Bowling Score Board";
@@ -267,6 +277,8 @@
 			files = (
 				F2725212167297690020E79C /* main.m in Sources */,
 				F2725216167297690020E79C /* AppDelegate.m in Sources */,
+				F2C6AFD3167372CD0056395C /* GamingEventViewController.m in Sources */,
+				F2C6AFD61673792A0056395C /* GamingEventMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +455,7 @@
 				F2725247167297690020E79C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2725248167297690020E79C /* Build configuration list for PBXNativeTarget "Bowling Score BoardTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +464,7 @@
 				F272524A167297690020E79C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
