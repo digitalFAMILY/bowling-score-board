@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		633A9F9516729E58005E8C8D /* DataModel_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 633A9F9316729E58005E8C8D /* DataModel_v1.xcdatamodeld */; };
 		6369E80F1672C0CC000C7832 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6369E80E1672C0CC000C7832 /* CoreData.framework */; };
-		63FD0E421673868800826B4F /* GamingEventMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD0E3F1673868800826B4F /* GamingEventMenuViewController.m */; };
-		63FD0E431673868800826B4F /* GamingEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FD0E411673868800826B4F /* GamingEventViewController.m */; };
 		F2725206167297690020E79C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725205167297690020E79C /* UIKit.framework */; };
 		F2725208167297690020E79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725207167297690020E79C /* Foundation.framework */; };
 		F272520A167297690020E79C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725209167297690020E79C /* CoreGraphics.framework */; };
@@ -26,6 +24,12 @@
 		F2725237167297690020E79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725207167297690020E79C /* Foundation.framework */; };
 		F272523F167297690020E79C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F272523D167297690020E79C /* InfoPlist.strings */; };
 		F2725242167297690020E79C /* Bowling_Score_BoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2725241167297690020E79C /* Bowling_Score_BoardTests.m */; };
+		F2A5A43E1673BC2100C81A49 /* GamingEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A5A43C1673B97300C81A49 /* GamingEventViewController.m */; };
+		F2C6AFD61673792A0056395C /* GamingEventMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */; };
+		F2C6AFDD16738CDD0056395C /* GamingEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFDC16738CDD0056395C /* GamingEventDetailViewController.m */; };
+		F2C6AFE11673927C0056395C /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFE01673927C0056395C /* LocationDetailViewController.m */; };
+		F2C6AFE31673ACA00056395C /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F2C6AFE21673ACA00056395C /* arrow.png */; };
+		F2C6AFE61673AEA10056395C /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C6AFE51673AEA10056395C /* FoodViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +45,6 @@
 /* Begin PBXFileReference section */
 		633A9F9416729E58005E8C8D /* DataModel_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel_v1.xcdatamodel; sourceTree = "<group>"; };
 		6369E80E1672C0CC000C7832 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		63FD0E3E1673868800826B4F /* GamingEventMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventMenuViewController.h; sourceTree = "<group>"; };
-		63FD0E3F1673868800826B4F /* GamingEventMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventMenuViewController.m; sourceTree = "<group>"; };
-		63FD0E401673868800826B4F /* GamingEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventViewController.h; sourceTree = "<group>"; };
-		63FD0E411673868800826B4F /* GamingEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventViewController.m; sourceTree = "<group>"; };
 		F2725201167297690020E79C /* Bowling Score Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowling Score Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2725205167297690020E79C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F2725207167297690020E79C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,6 +65,17 @@
 		F272523E167297690020E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F2725240167297690020E79C /* Bowling_Score_BoardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bowling_Score_BoardTests.h; sourceTree = "<group>"; };
 		F2725241167297690020E79C /* Bowling_Score_BoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bowling_Score_BoardTests.m; sourceTree = "<group>"; };
+		F2A5A43B1673B97300C81A49 /* GamingEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventViewController.h; sourceTree = "<group>"; };
+		F2A5A43C1673B97300C81A49 /* GamingEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventViewController.m; sourceTree = "<group>"; };
+		F2C6AFD41673792A0056395C /* GamingEventMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventMenuViewController.h; sourceTree = "<group>"; };
+		F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventMenuViewController.m; sourceTree = "<group>"; };
+		F2C6AFDB16738CDD0056395C /* GamingEventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamingEventDetailViewController.h; sourceTree = "<group>"; };
+		F2C6AFDC16738CDD0056395C /* GamingEventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamingEventDetailViewController.m; sourceTree = "<group>"; };
+		F2C6AFDF1673927C0056395C /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
+		F2C6AFE01673927C0056395C /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
+		F2C6AFE21673ACA00056395C /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		F2C6AFE41673AEA10056395C /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		F2C6AFE51673AEA10056395C /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +141,17 @@
 				F2725215167297690020E79C /* AppDelegate.m */,
 				F272521D167297690020E79C /* MainStoryboard.storyboard */,
 				633A9F9316729E58005E8C8D /* DataModel_v1.xcdatamodeld */,
-				63FD0E3E1673868800826B4F /* GamingEventMenuViewController.h */,
-				63FD0E3F1673868800826B4F /* GamingEventMenuViewController.m */,
-				63FD0E401673868800826B4F /* GamingEventViewController.h */,
-				63FD0E411673868800826B4F /* GamingEventViewController.m */,
+				F2C6AFE41673AEA10056395C /* FoodViewController.h */,
+				F2C6AFE51673AEA10056395C /* FoodViewController.m */,
+				F2C6AFDF1673927C0056395C /* LocationDetailViewController.h */,
+				F2C6AFE01673927C0056395C /* LocationDetailViewController.m */,
+				F2C6AFD41673792A0056395C /* GamingEventMenuViewController.h */,
+				F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */,
+				F2C6AFDB16738CDD0056395C /* GamingEventDetailViewController.h */,
+				F2C6AFDC16738CDD0056395C /* GamingEventDetailViewController.m */,
+				F2A5A43B1673B97300C81A49 /* GamingEventViewController.h */,
+				F2A5A43C1673B97300C81A49 /* GamingEventViewController.m */,
+				F2C6AFE21673ACA00056395C /* arrow.png */,
 				F272520C167297690020E79C /* Supporting Files */,
 			);
 			path = "Bowling Score Board";
@@ -248,6 +266,7 @@
 				F272521A167297690020E79C /* Default@2x.png in Resources */,
 				F272521C167297690020E79C /* Default-568h@2x.png in Resources */,
 				F272521F167297690020E79C /* MainStoryboard.storyboard in Resources */,
+				F2C6AFE31673ACA00056395C /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +304,11 @@
 				F2725212167297690020E79C /* main.m in Sources */,
 				F2725216167297690020E79C /* AppDelegate.m in Sources */,
 				633A9F9516729E58005E8C8D /* DataModel_v1.xcdatamodeld in Sources */,
-				63FD0E421673868800826B4F /* GamingEventMenuViewController.m in Sources */,
-				63FD0E431673868800826B4F /* GamingEventViewController.m in Sources */,
+				F2C6AFD61673792A0056395C /* GamingEventMenuViewController.m in Sources */,
+				F2C6AFDD16738CDD0056395C /* GamingEventDetailViewController.m in Sources */,
+				F2C6AFE11673927C0056395C /* LocationDetailViewController.m in Sources */,
+				F2C6AFE61673AEA10056395C /* FoodViewController.m in Sources */,
+				F2A5A43E1673BC2100C81A49 /* GamingEventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

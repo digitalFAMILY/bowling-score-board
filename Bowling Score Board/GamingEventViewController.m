@@ -198,9 +198,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    GamingEventMenuViewController* gamingEventMenu = segue.destinationViewController;
-    
-    gamingEventMenu.menuState = GamingEventMenuStateEventDetails;
+    if(segue.identifier == @"selectEvent")
+    {
+        GamingEventMenuViewController* gamingEventMenu = segue.destinationViewController;
+        
+        gamingEventMenu.menuState = GamingEventMenuStateEventDetails;
+    }
 }
 
 @end
