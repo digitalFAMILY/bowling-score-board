@@ -18,6 +18,7 @@
     </entity>
     <entity name="GamingEvent" syncable="YES">
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="gamingevent" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Lane" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -47,13 +48,13 @@
     <entity name="Player" syncable="YES">
         <relationship name="food_eaten" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodEaten" syncable="YES"/>
         <relationship name="games" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" syncable="YES"/>
-        <relationship name="gaming_event" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GamingEvent" syncable="YES"/>
+        <relationship name="gamingevent" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GamingEvent" inverseName="players" inverseEntity="GamingEvent" syncable="YES"/>
     </entity>
     <elements>
         <element name="Food" positionX="-63" positionY="443" width="128" height="73"/>
         <element name="Game" positionX="133" positionY="254" width="128" height="88"/>
         <element name="GamePrice" positionX="322" positionY="359" width="128" height="73"/>
-        <element name="GamingEvent" positionX="340" positionY="54" width="128" height="58"/>
+        <element name="GamingEvent" positionX="340" positionY="54" width="128" height="73"/>
         <element name="Lane" positionX="297" positionY="540" width="128" height="88"/>
         <element name="LaneExtra" positionX="468" positionY="513" width="126" height="73"/>
         <element name="Location" positionX="124" positionY="380" width="128" height="178"/>
