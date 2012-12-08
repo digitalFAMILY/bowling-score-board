@@ -8,11 +8,13 @@
 
 #import "GamingEventViewController.h"
 #import "GamingEventMenuViewController.h"
+#import "GamingEventDetailViewController.h"
 
 @interface GamingEventViewController ()
 
 -(id)recordAtIndexPath:(NSIndexPath*)indexPath;
 -(NSDateFormatter*)dateFormatter;
+-(void)clickAddButton:(id)sender;
 
 @end
 
@@ -32,7 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(clickAddButton:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
@@ -80,24 +82,9 @@
     //TODO: tell next mastercontroller to switch here
 }
 
-- (void)insertNewObject:(id)sender
+- (void)clickAddButton:(id)sender
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+    [self performSegueWithIdentifier:@"newEvent" sender:self];
 }
 
 
@@ -183,9 +170,10 @@
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
+            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationNone];
             
+            break;
+        
         case NSFetchedResultsChangeDelete:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
@@ -214,7 +202,6 @@
     cell.textLabel.text = [self.dateFormatter stringFromDate:[object valueForKey:@"timeStamp"]];
 }
 
-
 #pragma mark - Table view delegate
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -227,6 +214,10 @@
         
         gamingEventMenu.menuState = GamingEventMenuStateEventDetails;
         gamingEventMenu.gamingEvent = [self recordAtIndexPath:selectedRowIndex];
+    } else if([segue.identifier isEqualToString:@"newEvent"]) {
+        GamingEventDetailViewController* gamingEventDetail = ((UINavigationController*)segue.destinationViewController).viewControllers[0];
+        
+        gamingEventDetail.delegate = self;
     }
 }
 
@@ -243,6 +234,28 @@
     dateFormatter.dateFormat = @"EEEE, dd.MM.YYYY HH:mm";
     
     return dateFormatter;
+}
+
+-(void)addGamingEvent
+{
+    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [self performSegueWithIdentifier:@"HomeSegue" sender:self];
 }
 
 @end

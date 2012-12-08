@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface GamingEventViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@protocol GamingEventDetailViewControllerDelegate;
+@interface GamingEventViewController : UITableViewController <NSFetchedResultsControllerDelegate, GamingEventDetailViewControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
