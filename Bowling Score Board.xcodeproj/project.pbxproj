@@ -17,12 +17,6 @@
 		F272521A167297690020E79C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2725219167297690020E79C /* Default@2x.png */; };
 		F272521C167297690020E79C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F272521B167297690020E79C /* Default-568h@2x.png */; };
 		F272521F167297690020E79C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F272521D167297690020E79C /* MainStoryboard.storyboard */; };
-		F2725222167297690020E79C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2725221167297690020E79C /* FirstViewController.m */; };
-		F2725224167297690020E79C /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = F2725223167297690020E79C /* first.png */; };
-		F2725226167297690020E79C /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2725225167297690020E79C /* first@2x.png */; };
-		F2725229167297690020E79C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2725228167297690020E79C /* SecondViewController.m */; };
-		F272522B167297690020E79C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = F272522A167297690020E79C /* second.png */; };
-		F272522D167297690020E79C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F272522C167297690020E79C /* second@2x.png */; };
 		F2725235167297690020E79C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725234167297690020E79C /* SenTestingKit.framework */; };
 		F2725236167297690020E79C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725205167297690020E79C /* UIKit.framework */; };
 		F2725237167297690020E79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725207167297690020E79C /* Foundation.framework */; };
@@ -55,14 +49,6 @@
 		F2725219167297690020E79C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F272521B167297690020E79C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F272521E167297690020E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F2725220167297690020E79C /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F2725221167297690020E79C /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		F2725223167297690020E79C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		F2725225167297690020E79C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		F2725227167297690020E79C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F2725228167297690020E79C /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		F272522A167297690020E79C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		F272522C167297690020E79C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		F2725233167297690020E79C /* Bowling Score BoardTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bowling Score BoardTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2725234167297690020E79C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F272523C167297690020E79C /* Bowling Score BoardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bowling Score BoardTests-Info.plist"; sourceTree = "<group>"; };
@@ -131,14 +117,6 @@
 				F2725214167297690020E79C /* AppDelegate.h */,
 				F2725215167297690020E79C /* AppDelegate.m */,
 				F272521D167297690020E79C /* MainStoryboard.storyboard */,
-				F2725220167297690020E79C /* FirstViewController.h */,
-				F2725221167297690020E79C /* FirstViewController.m */,
-				F2725223167297690020E79C /* first.png */,
-				F2725225167297690020E79C /* first@2x.png */,
-				F2725227167297690020E79C /* SecondViewController.h */,
-				F2725228167297690020E79C /* SecondViewController.m */,
-				F272522A167297690020E79C /* second.png */,
-				F272522C167297690020E79C /* second@2x.png */,
 				F272520C167297690020E79C /* Supporting Files */,
 			);
 			path = "Bowling Score Board";
@@ -253,10 +231,6 @@
 				F272521A167297690020E79C /* Default@2x.png in Resources */,
 				F272521C167297690020E79C /* Default-568h@2x.png in Resources */,
 				F272521F167297690020E79C /* MainStoryboard.storyboard in Resources */,
-				F2725224167297690020E79C /* first.png in Resources */,
-				F2725226167297690020E79C /* first@2x.png in Resources */,
-				F272522B167297690020E79C /* second.png in Resources */,
-				F272522D167297690020E79C /* second@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +267,6 @@
 			files = (
 				F2725212167297690020E79C /* main.m in Sources */,
 				F2725216167297690020E79C /* AppDelegate.m in Sources */,
-				F2725222167297690020E79C /* FirstViewController.m in Sources */,
-				F2725229167297690020E79C /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
