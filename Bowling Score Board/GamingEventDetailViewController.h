@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GamingEventMenuViewController.h"
+#import "LocationEditViewController.h"
 
 @protocol GamingEventDetailViewControllerDelegate;
 
@@ -15,6 +16,8 @@
 
 @property (nonatomic, strong) id gamingEvent;
 @property (nonatomic, weak) id<GamingEventDetailViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) UIPopoverController *locationEditPopoverController;
 
 @end
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		633A9F9516729E58005E8C8D /* DataModel_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 633A9F9316729E58005E8C8D /* DataModel_v1.xcdatamodeld */; };
 		6369E80F1672C0CC000C7832 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6369E80E1672C0CC000C7832 /* CoreData.framework */; };
+		6389E26816740C7B00D68178 /* LocationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6389E26716740C7B00D68178 /* LocationEditViewController.m */; };
+		6389E26B1674161800D68178 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6389E26A1674161800D68178 /* CoreDataTableViewController.m */; };
 		F2725206167297690020E79C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725205167297690020E79C /* UIKit.framework */; };
 		F2725208167297690020E79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725207167297690020E79C /* Foundation.framework */; };
 		F272520A167297690020E79C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2725209167297690020E79C /* CoreGraphics.framework */; };
@@ -45,6 +47,10 @@
 /* Begin PBXFileReference section */
 		633A9F9416729E58005E8C8D /* DataModel_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel_v1.xcdatamodel; sourceTree = "<group>"; };
 		6369E80E1672C0CC000C7832 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6389E26616740C7B00D68178 /* LocationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationEditViewController.h; sourceTree = "<group>"; };
+		6389E26716740C7B00D68178 /* LocationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationEditViewController.m; sourceTree = "<group>"; };
+		6389E2691674161800D68178 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		6389E26A1674161800D68178 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		F2725201167297690020E79C /* Bowling Score Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bowling Score Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2725205167297690020E79C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F2725207167297690020E79C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,10 +154,14 @@
 				F2C6AFD41673792A0056395C /* GamingEventMenuViewController.h */,
 				F2C6AFD51673792A0056395C /* GamingEventMenuViewController.m */,
 				F2C6AFDB16738CDD0056395C /* GamingEventDetailViewController.h */,
+				6389E2691674161800D68178 /* CoreDataTableViewController.h */,
+				6389E26A1674161800D68178 /* CoreDataTableViewController.m */,
 				F2C6AFDC16738CDD0056395C /* GamingEventDetailViewController.m */,
 				F2A5A43B1673B97300C81A49 /* GamingEventViewController.h */,
 				F2A5A43C1673B97300C81A49 /* GamingEventViewController.m */,
 				F2C6AFE21673ACA00056395C /* arrow.png */,
+				6389E26616740C7B00D68178 /* LocationEditViewController.h */,
+				6389E26716740C7B00D68178 /* LocationEditViewController.m */,
 				F272520C167297690020E79C /* Supporting Files */,
 			);
 			path = "Bowling Score Board";
@@ -309,6 +319,8 @@
 				F2C6AFE11673927C0056395C /* LocationDetailViewController.m in Sources */,
 				F2C6AFE61673AEA10056395C /* FoodViewController.m in Sources */,
 				F2A5A43E1673BC2100C81A49 /* GamingEventViewController.m in Sources */,
+				6389E26816740C7B00D68178 /* LocationEditViewController.m in Sources */,
+				6389E26B1674161800D68178 /* CoreDataTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +425,7 @@
 		F2725246167297690020E79C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bowling Score Board/Bowling Score Board-Prefix.pch";
 				INFOPLIST_FILE = "Bowling Score Board/Bowling Score Board-Info.plist";
@@ -424,6 +437,7 @@
 		F2725247167297690020E79C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bowling Score Board/Bowling Score Board-Prefix.pch";
 				INFOPLIST_FILE = "Bowling Score Board/Bowling Score Board-Info.plist";

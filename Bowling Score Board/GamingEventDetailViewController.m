@@ -37,7 +37,7 @@
     [super viewDidLoad];
 
     
-    self.players = @[@"Laszlo Korte",@"Markus Ullmann",@"Hajo Piepereit"];
+    self.players = @[@"Laszlo Korte", @"Markus Ullmann", @"Hajo Piepereit"];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonClicked:)];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -139,47 +139,8 @@
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return NO;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -188,9 +149,16 @@
     if(self.editMode) {
         switch (indexPath.section) {
             case 0:
-                break;
+                switch (indexPath.row) {
+                    case 1:
+                        [self locationTapped:[self.tableView cellForRowAtIndexPath:indexPath]];
+                        break;
+                    default:
+                        break;
+                }
         }
-    }
+    } 
+
     
     
     // Navigation logic may go here. Create and push another view controller.
@@ -236,6 +204,25 @@
     dateFormatter.dateFormat = @"EEEE, dd.MM.YYYY HH:mm";
     
     return dateFormatter;
+}
+
+- (IBAction)locationTapped:(UITableViewCell *)sender
+{
+    NSManagedObject *event = self.gamingEvent;
+    NSManagedObjectContext *context = event.managedObjectContext;
+    LocationEditViewController* content = [[LocationEditViewController alloc] initInManagedObjectContext:context];
+    UIPopoverController* aPopover = [[UIPopoverController alloc]
+                                     initWithContentViewController:content];
+    aPopover.delegate = self;
+    
+    // Store the popover in a custom property for later use.
+    self.locationEditPopoverController = aPopover;
+    
+//    [self.locationEditPopoverController presentPopoverFromBarButtonItem:sender
+//                                               permittedArrowDirections:UIPopoverArrowDirectionUp
+//                                                               animated:YES];
+    
+    [self.locationEditPopoverController presentPopoverFromRect:sender.frame inView:self.tableView permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 }
 
 @end
